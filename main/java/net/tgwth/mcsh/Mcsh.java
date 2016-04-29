@@ -1,6 +1,5 @@
 package net.tgwth.mcsh;
 
-import net.minecraft.init.Blocks;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -16,7 +15,7 @@ public class Mcsh
     public static final String MODVERSION = "1.0.0";
     
 
-    @SidedProxy(clientSide = "com.treevamped.ClientProxy")
+    @SidedProxy(clientSide = "net.tgwth.mcsh.ClientProxy")
     public static ClientProxy proxy;
     
     
