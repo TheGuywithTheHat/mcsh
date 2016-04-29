@@ -14,7 +14,6 @@ public class Mcsh
     public static final String MODNAME = "mcsh";
     public static final String MODVERSION = "1.0.0";
     
-
     @SidedProxy(clientSide = "net.tgwth.mcsh.ClientProxy")
     public static ClientProxy proxy;
     

@@ -2,6 +2,7 @@ package net.tgwth.mcsh.gui;
 
 import org.lwjgl.input.Keyboard;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -21,7 +22,7 @@ public class KeyHandler {
     @SubscribeEvent
     public void onKeyInput(InputEvent.KeyInputEvent event) {
         if(mcshKey.isPressed()) {
-            
+        	Minecraft.getMinecraft().displayGuiScreen(new GuiMcsh());
         }
     }
 }
