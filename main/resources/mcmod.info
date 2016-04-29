@@ -1,0 +1,15 @@
+[
+{
+  "modid": "mcsh",
+  "name": "mcsh",
+  "description": "Linux-style command line in Minecraft.",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["The Guy with The Hat"],
+  "credits": "The MCP guys, for making Minecraft modding possible; the Forge and FML guys, for making this great API; TheGuywithTheHat, for making the mod itself.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
