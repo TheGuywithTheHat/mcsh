@@ -8,20 +8,23 @@ import org.lwjgl.input.Keyboard;
 
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ChatAllowedCharacters;
+import net.tgwth.mcsh.shell.Mcsh;
 
 public class GuiMcsh extends GuiScreen {
-    LinkedList<String> history;
-    PrintStream out;
-    McshOutputStream mcOut;
+    public LinkedList<String> history;
+    public PrintStream out;
+    private McshOutputStream mcOut;
+    private Mcsh shell;
     
-    StringBuilder currentLine;
+    private StringBuilder currentLine;
     /** How far from the end of the line the cursor is. */
-    int cursorPos;
+    private int cursorPos;
     
     public GuiMcsh() {
-        history = new LinkedList<String>();
+        history = new LinkedList<>();
         mcOut = new McshOutputStream(this);
         out = new PrintStream(mcOut, true);
+        shell = new Mcsh(this);
         
         currentLine = new StringBuilder();
         cursorPos = 0;
@@ -68,7 +71,6 @@ public class GuiMcsh extends GuiScreen {
      */
     @Override
     protected void keyTyped(char typedChar, int keyCode) throws IOException {
-        System.out.println(typedChar + ", " + keyCode);
         super.keyTyped(typedChar, keyCode);
         
         if(GuiScreen.isKeyComboCtrlV(keyCode)) {
@@ -102,6 +104,7 @@ public class GuiMcsh extends GuiScreen {
     
     private void execute() {
         out.println("> " + currentLine);
+        shell.execute(currentLine.toString());
         currentLine = new StringBuilder();
         cursorPos = 0;
     }
